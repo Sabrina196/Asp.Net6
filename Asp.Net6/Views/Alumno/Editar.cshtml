@@ -1,0 +1,54 @@
+﻿<!--Recibe el Modelo Alumno con datos-->
+@model Asp.Net6.Models.Alumno; 
+
+@{
+    ViewData["Title"] = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Editar">
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+
+        <div class="form-group row">
+            <h2 class="text-info pl-3"> Editar Alumno </h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="NombreApellido" class="form-label"></label>
+                    <input asp-for="NombreApellido" class="form-control" />
+                    <span asp-validation-for="NombreApellido" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="correo" class="form-label"></label>
+                    <input asp-for="correo" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2 d-md-block">
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <a asp-controller="Alumno" asp-action="Index" class="btn btn-success">Volver</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+<!--Validaciones sin llegar al servidor/controlador-->
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+

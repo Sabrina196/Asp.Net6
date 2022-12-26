@@ -1,0 +1,64 @@
+﻿@model Asp.Net6.Models.Curso
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Eliminar">
+
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+
+        <div class="form-group row">
+            <h2 class="text-danger pl-3">¿Está seguro de eliminar el Curso?</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Comision" class="form-label"></label>
+                    <input asp-for="Comision" disabled class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Materia" class="form-label"></label>
+                    <input asp-for="Materia" disabled class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="horario" class="form-label"></label>
+                    <input asp-for="horario" disabled class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="anioLectivo" class="form-label"></label>
+                    <input asp-for="anioLectivo" type="number" disabled class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="d-grid gap-2 d-md-block">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a asp-controller="Curso" asp-action="Index" class="btn btn-success">Volver</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+
+<!--Validaciones sin llegar al servidor/controlador-->
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
