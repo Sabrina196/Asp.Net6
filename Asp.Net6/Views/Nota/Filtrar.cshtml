@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Asp.Net6.Models.Nota>
+
+@{
+    ViewData["Title"] = "Filtro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<div class="container p-3">
+    <div class="row  text-center pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> </h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Nota" asp-action="Upsert" class="btn btn-primary"><i class="fa-solid fa-square-plus me-2"></i>Agregar Alumno a este Curso</a>
+        </div>
+    </div>
+</div>
+<br />
+
+@if (Model.Count() > 0)
+{
+
+        <table class="table table-bordered text-center " style="width:100%">
+             
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Alumno</th>
+                    <th>1º Informe</th>
+                    <th>Nota 1</th>
+                    <th>2º Informe</th>
+                    <th>Nota 2</th>
+                    <th>3º Informe</th>
+                    <th>Nota 3</th>
+                    <th>Nota Final</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <th>@item.Curso.Comision - @item.Curso.Materia</th>
+                        <td>@item.Alumno.NombreApellido</td>
+                        <td>@item.Informe_1)</td>
+                        <td>@item.nota1</td>
+                        <td>@item.Informe_2)</td>
+                        <td>@item.nota2</td>
+                        <td>@item.Informe_3)</td>
+                        <td>@item.nota3</td>
+                        <td>@item.notaFinal</td>
+                        <td><a asp-controller="Nota" asp-action="Upsert" asp-route-Id="@item.Id" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a></td>
+                        <td><a asp-controller="Nota" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+
+            }
+            </tbody>
+        </table>
+            
+}
+else
+{
+    <p>No hay registros de Notas</p>
+}
+

@@ -1,0 +1,133 @@
+﻿@model Asp.Net6.Models.ViewModels.NotaVM
+
+@{
+    string Titulo = "Crear Nueva Nota";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Upsert">
+    <!--Identificamos si Model.Id es diferente de Cero, es porque Editamos-->
+    @if (Model.Nota.Id != 0)
+    {
+        Titulo = "Editar Nota";
+        <input asp-for="Nota.Id" hidden />
+    }
+
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">@Titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.CursoId" class="form-label">Curso</label>
+                            <select asp-for="Nota.CursoId" asp-items="@Model.CursoLista" class="form-select">
+                                <option disabled selected>--Seleccione un Curso</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.AlumnoId" class="form-label">Alumno</label>
+                            <select asp-for="Nota.AlumnoId" asp-items="@Model.AlumnoLista" class="form-select">
+                                <option disabled selected>--Seleccione un Alumno</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.Informe_1" class="form-label">1º Informe</label>
+                            <select asp-for="Nota.Informe_1" class="form-select">
+                                <option disabled selected>--Seleccione un Alumno</option>
+                                <option value="TEA" class="text-primary fw-bold" selected>TEA</option>
+                                <option value="TEP" class="text-success fw-bold" selected>TEP</option>
+                                <option value="TED" class="text-danger fw-bold" selected>TED</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.nota1" class="form-label">1° Nota</label>
+                            <input asp-for="Nota.nota1" type="number" class="form-control" />
+                            <span asp-validation-for="Nota.nota1" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.Informe_2" class="form-label">2º Informe</label>
+                            <select asp-for="Nota.Informe_2" class="form-select">
+                                <option disabled selected>--Seleccione un Alumno</option>
+                                <option value="TEA" class="text-primary fw-bold" selected>TEA</option>
+                                <option value="TEP" class="text-success fw-bold" selected>TEP</option>
+                                <option value="TED" class="text-danger fw-bold" selected>TED</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.nota2" class="form-label">2° Nota</label>
+                            <input asp-for="Nota.nota2" type="number" class="form-control" />
+                            <span asp-validation-for="Nota.nota2" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.Informe_3" class="form-label">3º Informe</label>
+                            <select asp-for="Nota.Informe_3" class="form-select">
+                                <option disabled selected>--Seleccione un Alumno</option>
+                                <option value="TEA" class="text-primary fw-bold" selected>TEA</option>
+                                <option value="TEP" class="text-success fw-bold" selected>TEP</option>
+                                <option value="TED" class="text-danger fw-bold" selected>TED</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.nota3" class="form-label">3° Nota</label>
+                            <input asp-for="Nota.nota3" type="number" class="form-control" />
+                            <span asp-validation-for="Nota.nota3" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Nota.notaFinal" class="form-label">Nota Final</label>
+                            <input asp-for="Nota.notaFinal" class="form-control" />
+                            <span asp-validation-for="Nota.notaFinal" disabled class="text-danger"></span>               
+                        </div>
+
+                    </div>
+                    <br />
+
+                    <div class="d-grid gap-2 d-md-block">
+                        <!--Validación-->
+                        @if (Model.Nota.Id != 0)
+                        {
+                            //Se Actualiza
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
+                        }
+                        else
+                        {
+                            <button type="submit" class="btn btn-primary">Crear Nuevo</button>
+                        }
+                        <a asp-controller="Nota" asp-action="Index" class="btn btn-success">Volver</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</form>
+

@@ -56,6 +56,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Documentos/PracticasSabri/Asp.Net6/Asp.Net6/Views/Nota/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90YVxFbGltaW5hci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Documentos/PracticasSabri/Asp.Net6/Asp.Net6/Views/Nota/Filtrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90YVxGaWx0cmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Documentos/PracticasSabri/Asp.Net6/Asp.Net6/Views/Nota/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Documentos/PracticasSabri/Asp.Net6/Asp.Net6/Views/Nota/Upsert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90YVxVcHNlcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Documentos/PracticasSabri/Asp.Net6/Asp.Net6/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

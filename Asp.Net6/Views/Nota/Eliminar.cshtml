@@ -1,0 +1,99 @@
+﻿@model Asp.Net6.Models.Nota
+
+@{
+    string Titulo = "¿Está seguro de Eliminar la Nota?";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Eliminar">
+    <input asp-for="Id" hidden />
+
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-danger">@Titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="CursoId" class="form-label">Curso</label>
+                            <input asp-for="CursoId" hidden class="form-control" />
+                            <input asp-for="Curso.Materia" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="AlumnoId" class="form-label">Alumno</label>
+                            <input asp-for="AlumnoId" hidden class="form-control" />
+                            <input asp-for="Alumno.NombreApellido" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="Informe_1" class="form-label">1° Nota</label>
+                            <input asp-for="Informe_1" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="nota1" class="form-label">1° Nota</label>
+                            <input asp-for="nota1" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="Informe_2" class="form-label">1° Nota</label>
+                            <input asp-for="Informe_2" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="nota2" class="form-label">2° Nota</label>
+                            <input asp-for="nota2" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="Informe_3" class="form-label">1° Nota</label>
+                            <input asp-for="Informe_3" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="nota3" class="form-label">3° Nota</label>
+                            <input asp-for="nota3" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="xol-md-6">
+                            <label asp-for="notaFinal" class="form-label">Promedio</label>
+                            <input asp-for="notaFinal" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="d-grid gap-2 d-md-block">
+                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                        <a asp-controller="Nota" asp-action="Index" class="btn btn-success">Volver</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+            
+
+    </div>
+
+</form>
+
+
+
